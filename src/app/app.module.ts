@@ -3,24 +3,18 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { HomeComponent } from './home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NbThemeModule, NbLayoutModule, NbTabsetModule, NbButtonModule, NbCardModule, NbIconModule, NbInputModule, NbListModule, NbDialogModule } from '@nebular/theme';
-import { NavComponent } from './nav/nav.component';
-import { ChapterComponent } from './chapter/chapter.component';
-import { CommentComponent } from './comment/comment.component';
 import { AuthComponent } from './common/auth/auth.component';
 import { RegisterComponent } from './common/register/register.component';
+import { LoginComponent } from './common/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    NavComponent,
-    ChapterComponent,
-    CommentComponent,
     AuthComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +29,8 @@ import { RegisterComponent } from './common/register/register.component';
     NbIconModule,
     NbInputModule,
     NbListModule,
-    NbDialogModule
+    NbDialogModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

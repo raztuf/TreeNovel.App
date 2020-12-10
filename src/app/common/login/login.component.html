@@ -1,0 +1,12 @@
+<nb-card>
+    <nb-card-header>
+        Login
+    </nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="loginFG" (ngSubmit)="onSubmit()">
+            <p>Mail : <input formControlName="email" nbInput></p>
+            <p>Password : <input formControlName="password" type="password" nbInput></p>
+            <button nbButton type="submit" [disabled]="loginFG.invalid">login</button>
+        </form>
+    </nb-card-body>
+</nb-card>

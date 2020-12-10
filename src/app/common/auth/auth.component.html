@@ -1,0 +1,12 @@
+<span *ngIf="currentUser == null">
+    <a [routerLink]="['/login']">Login</a> | 
+    <a [routerLink]="['/register']">Register</a> 
+</span>
+    
+<span *ngIf="currentUser != null">
+    <a [routerLink]="['/login']">{{currentUser.username}} </a>
+    <a [routerLink]="['/adminPanel']" *ngIf="currentUser.isAdmin"> | Administrator panel</a>
+    <button nbButton (click)="logout()">Logout</button>
+</span>
+    
+    

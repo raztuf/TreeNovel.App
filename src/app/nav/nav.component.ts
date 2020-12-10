@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NbMenuItem } from '@nebular/theme';
+import { NbTabsetModule } from '@nebular/theme';
 
 @Component({
   selector: 'app-nav',
@@ -8,8 +8,7 @@ import { NbMenuItem } from '@nebular/theme';
 })
 
 export class NavComponent implements OnInit {
-  public items : NbMenuItem[]
-  public adminMenu : NbMenuItem[]
+  public items : NbTabsetModule[]
 
   constructor() { }
 

@@ -1,3 +1,0 @@
-<list-item *ngFor="let item of listChapter">
-    <p *ngIf="activeLink == true"><a [routerLink]="['/detail/'+item.id]">  {{item.title}}</a></p>
-    <p *ngIf="activeLink == false">{{item.title}}</p>

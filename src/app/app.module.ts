@@ -9,6 +9,8 @@ import { NbThemeModule, NbLayoutModule, NbTabsetModule, NbButtonModule, NbCardMo
 import { NavComponent } from './nav/nav.component';
 import { ChapterComponent } from './chapter/chapter.component';
 import { CommentComponent } from './comment/comment.component';
+import { AuthComponent } from './common/auth/auth.component';
+import { RegisterComponent } from './common/register/register.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { CommentComponent } from './comment/comment.component';
     HomeComponent,
     NavComponent,
     ChapterComponent,
-    CommentComponent
+    CommentComponent,
+    AuthComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

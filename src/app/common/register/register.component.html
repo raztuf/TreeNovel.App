@@ -1,0 +1,13 @@
+<nb-card>
+    <nb-card-header>
+        <h5>Register</h5>
+    </nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="newUserFG" (ngSubmit)="onSubmit()">
+            <p>Username : <input nbInput formControlName="username"></p>
+            <p>Mail : <input nbInput formControlName="mail"></p>
+            <p>Password : <input nbInput formControlName="password" type="password"></p>
+            <p><button nbButton [disabled]="newUserFG.invalid">Submit</button></p>
+        </form>
+    </nb-card-body>
+</nb-card>

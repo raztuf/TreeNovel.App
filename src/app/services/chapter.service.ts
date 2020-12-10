@@ -8,13 +8,17 @@ import { Chapter } from '../models/content.model';
 })
 
 export class ChapterService {
+
     private url : string = "http://localhost:4000/api";
+
     constructor(
         private _client : HttpClient
     ){}
+
     getAll() : Observable<Chapter[]> {
         return this._client.get<Chapter[]>(this.url + "/chapter")
     }
+
     getOne(id : number) : Observable<Chapter> {
         let myHeaders = new HttpHeaders({
             'Content-Type': 'application/json',
@@ -22,6 +26,7 @@ export class ChapterService {
         })
         return this._client.get<Chapter>(this.url + "/chapter/" + id, {headers : myHeaders})
     }
+
     getByUserId(userId : number) : Observable<Chapter[]> {
         let myHeaders = new HttpHeaders({
             'Content-Type': 'application/json',

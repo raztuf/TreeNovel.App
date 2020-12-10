@@ -9,11 +9,14 @@ import { ChapterService } from '../services/chapter.service';
 })
 
 export class HomeComponent implements OnInit {
+
     listChapter : Chapter[]
     activeLink : boolean = false;
+
     constructor(
       private _service : ChapterService
-    ) { }
+    ){}
+
     ngOnInit(): void {
       this.activeLink = sessionStorage.getItem('token') != '' ? true : false
       this._service.getAll().subscribe((data : Chapter[]) => this.listChapter = data)

@@ -36,7 +36,7 @@ export class AuthService {
                 sessionStorage.setItem("role", this.currentUser.isAdmin ? "admin" : "user")
                 this.emitIsConnected()
             },
-            error : error => {console.log(error); console.log("Un incident c'est produit.")}
+            error : error => {console.log(error); console.log("An incident has occured.")}
         })
     }
     logout(){

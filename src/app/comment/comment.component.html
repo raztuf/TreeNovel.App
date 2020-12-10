@@ -1,0 +1,11 @@
+<nb-card status="info">
+    <nb-card-header>
+        Your comment on {{title}}
+    </nb-card-header>
+    <nb-card-body>
+        <textarea cols="100" rows="10" [(ngModel)]="content"></textarea>
+    </nb-card-body>
+    <nb-card-footer>
+       <button nbButton status="success" (click)="submit()">Submit</button> 
+    </nb-card-footer>
+</nb-card>

@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-chapter',
   templateUrl: './chapter.component.html',
-  styleUrls: ['./chapter.component.css']
+  styleUrls: ['./chapter.component.scss']
 })
 
 export class ChapterComponent implements OnInit {

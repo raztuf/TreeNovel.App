@@ -4,10 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NbThemeModule, NbLayoutModule, NbTabsetModule, NbButtonModule, NbCardModule, NbIconModule, NbInputModule, NbListModule, NbDialogModule } from '@nebular/theme';
+import { NbThemeModule, NbSidebarModule, NbLayoutModule, NbTabsetModule, NbButtonModule, NbCardModule, NbIconModule, NbInputModule, NbListModule, NbDialogModule } from '@nebular/theme';
 import { AuthComponent } from './common/auth/auth.component';
 import { RegisterComponent } from './common/register/register.component';
 import { LoginComponent } from './common/login/login.component';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,7 @@ import { LoginComponent } from './common/login/login.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NbThemeModule,
+    NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
     NbTabsetModule,
     NbButtonModule,
@@ -30,7 +33,11 @@ import { LoginComponent } from './common/login/login.component';
     NbInputModule,
     NbListModule,
     NbDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
+    NbSidebarModule,
+    BrowserAnimationsModule,
+    NbEvaIconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

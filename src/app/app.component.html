@@ -1,4 +1,30 @@
-<h2>IT WORKS</h2>
 <nb-layout>
-    <span><app-auth></app-auth></span>
+
+  <nb-layout-header fixed>
+  <!-- Insert header here -->
+  </nb-layout-header>
+
+  <nb-layout-column>
+
+    <nb-layout>
+    
+        <nb-layout-header fixed>TreeNovel</nb-layout-header>
+    
+        <nb-sidebar>Menu</nb-sidebar>
+    
+        <nb-layout-column>
+            <router-outlet></router-outlet>
+        </nb-layout-column>
+    
+        <nb-layout-footer fixed>
+            <p>Nicolas Castronovo 2020</p>
+        </nb-layout-footer>
+    
+    </nb-layout>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
 </nb-layout>

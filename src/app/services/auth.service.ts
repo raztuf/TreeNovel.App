@@ -29,7 +29,7 @@ export class AuthService {
         var user = new LoginInfo();
         user.mail = mail;
         user.password = password;
-        this._client.post<User>(this.url + "/auth/auth", user).subscribe({
+        this._client.post<User>(this.url + "/auth", user).subscribe({
             next : (data : User) => {
                 this.currentUser = data;
                 sessionStorage.setItem("token", this.currentUser.token)

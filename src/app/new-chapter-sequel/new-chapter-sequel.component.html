@@ -3,16 +3,13 @@
         New Chapter
     </nb-card-header>
     <nb-card-body>
-        <p>Title</p>
-        <textarea cols="197" rows="1" [(ngModel)]="title"></textarea>
-        <p>Your Chapter</p>
-        <textarea cols="197" rows="50" [(ngModel)]="content"></textarea>
-        <p>Encyclopedia</p>
-        <textarea cols="197" rows="10" [(ngModel)]="encyclopedia"></textarea>
+        <form (ngSubmit)="submit()">
+            <input nbInput fullWidth name="title" type="text" [(ngModel)]="title" placeholder="Title">
+            <textarea fullWidth name="content" nbInput type="text" [(ngModel)]="content" placeholder="Content"></textarea>
+            <textarea fullWidth name="encyclopedia" nbInput type="text" [(ngModel)]="encyclopedia" placeholder="Encyclopedia"></textarea>
+            <button nbButton>Submit</button>
+        </form>
     </nb-card-body>
-    <nb-card-footer>
-       <button nbButton status="success" (click)="submit()">Submit</button> 
-    </nb-card-footer>
 </nb-card>
 
 <nb-card *ngIf="currentUser == null">

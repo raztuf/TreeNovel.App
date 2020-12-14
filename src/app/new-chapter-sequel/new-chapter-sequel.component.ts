@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Chapter } from '../models/content.model';
+import { Chapter, ChapterToApi } from '../models/content.model';
 import { User } from '../models/users.model';
 import { AuthService } from '../services/auth.service';
 import { ChapterService } from '../services/chapter.service';
@@ -30,11 +30,11 @@ export class NewChapterSequelComponent implements OnInit {
 
   submit(){
     let Id = this._route.snapshot.params['id'];
-    let chapter = new Chapter()
+    let chapter = new ChapterToApi()
     chapter.title = this.title;
     chapter.content = this.content;
     chapter.date = new Date();
-    chapter.writer = this.currentUser;
+    chapter.userId = this.currentUser.id;
     chapter.encyclopedia = this.encyclopedia;
     chapter.lastChapterId = Id;
     this._chapterService.addChapter(chapter);

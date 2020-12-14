@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Chapter } from '../models/content.model';
+import { Chapter, ChapterToApi } from '../models/content.model';
 import { User } from '../models/users.model';
 import { AuthService } from '../services/auth.service';
 import { ChapterService } from '../services/chapter.service';
-import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-new-chapter',
@@ -19,19 +18,19 @@ export class NewChapterComponent implements OnInit {
 
   constructor(
     private _chapterService : ChapterService,
-    private _userService : AuthService
+    private _authService : AuthService
   ) { }
 
   ngOnInit(): void {
-    this.currentUser = this._userService.currentUser;
+    this.currentUser = this._authService.currentUser;
   }
 
   submit(){
-    let chapter = new Chapter()
+    let chapter = new ChapterToApi()
     chapter.title = this.title;
     chapter.content = this.content;
     chapter.date = new Date();
-    chapter.writer = this.currentUser;
+    chapter.userId= this.currentUser.id;
     chapter.encyclopedia = this.encyclopedia;
     this._chapterService.addChapter(chapter);
   }

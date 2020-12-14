@@ -1,0 +1,43 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Chapter } from '../models/content.model';
+import { User } from '../models/users.model';
+import { AuthService } from '../services/auth.service';
+import { ChapterService } from '../services/chapter.service';
+import { UserService } from '../services/user.service';
+
+@Component({
+  selector: 'app-new-chapter',
+  templateUrl: './new-chapter-sequel.component.html',
+  styleUrls: ['./new-chapter-sequel.component.scss']
+})
+export class NewChapterSequelComponent implements OnInit {
+
+  title : string;
+  content : string;
+  encyclopedia : string;
+  currentUser : User;
+
+  constructor(
+    private _chapterService : ChapterService,
+    private _route : ActivatedRoute,
+    private _userService : AuthService
+  ) { }
+
+  ngOnInit(): void {
+    this.currentUser = this._userService.currentUser;
+  }
+
+  submit(){
+    let Id = this._route.snapshot.params['id'];
+    let chapter = new Chapter()
+    chapter.title = this.title;
+    chapter.content = this.content;
+    chapter.date = new Date();
+    chapter.writer = this.currentUser;
+    chapter.encyclopedia = this.encyclopedia;
+    chapter.lastChapterId = Id;
+    this._chapterService.addChapter(chapter);
+  }
+
+}

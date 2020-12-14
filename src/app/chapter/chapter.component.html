@@ -9,6 +9,7 @@
     </nb-card-body>
 
     <nb-card-footer>
-        <p><a [routerLink]="['/reply', currentChapter.id]" routerLinkActive="on">Next</a></p>
+        <span><a [routerLink]="['/reply', currentChapter.id]">Next</a></span> | 
+        <span><a [routerLink]="['/submit', currentChapter.id]">Write your own sequel</a></span>
     </nb-card-footer>
 </nb-card>

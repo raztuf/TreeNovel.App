@@ -5,7 +5,7 @@ export class Chapter {
     title : string;
     content : string;
     date : Date;
-    lastChapterI? : number;
+    lastChapterId : number;
     encyclopedia : string;
     writer : User;
 }

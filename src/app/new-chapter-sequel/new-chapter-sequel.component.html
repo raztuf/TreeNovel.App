@@ -1,0 +1,22 @@
+<nb-card *ngIf="currentUser != null">
+    <nb-card-header>
+        New Chapter
+    </nb-card-header>
+    <nb-card-body>
+        <p>Title</p>
+        <textarea cols="197" rows="1" [(ngModel)]="title"></textarea>
+        <p>Your Chapter</p>
+        <textarea cols="197" rows="50" [(ngModel)]="content"></textarea>
+        <p>Encyclopedia</p>
+        <textarea cols="197" rows="10" [(ngModel)]="encyclopedia"></textarea>
+    </nb-card-body>
+    <nb-card-footer>
+       <button nbButton status="success" (click)="submit()">Submit</button> 
+    </nb-card-footer>
+</nb-card>
+
+<nb-card *ngIf="currentUser == null">
+    <nb-card-header>
+        Login or register to write a chapter
+    </nb-card-header>
+</nb-card>

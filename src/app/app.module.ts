@@ -16,6 +16,9 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthService } from './services/auth.service';
 import { ChapterComponent } from './chapter/chapter.component';
 import { NextChapterComponent } from './next-chapter/next-chapter.component';
+import { UserService } from './services/user.service';
+import { NewChapterComponent } from './new-chapter/new-chapter.component';
+import { NewChapterSequelComponent } from './new-chapter-sequel/new-chapter-sequel.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { NextChapterComponent } from './next-chapter/next-chapter.component';
     HomeComponent,
     AdminComponent,
     ChapterComponent,
-    NextChapterComponent
+    NextChapterComponent,
+    NewChapterComponent,
+    NewChapterSequelComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,7 @@ import { NextChapterComponent } from './next-chapter/next-chapter.component';
     BrowserAnimationsModule,
     NbEvaIconsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

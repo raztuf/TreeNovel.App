@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  token : string = localStorage.getItem("token");
-
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

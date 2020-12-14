@@ -34,4 +34,11 @@ export class ChapterService {
         })
         return this._client.get<Chapter[]>(this.url + "/chapter/reply/" + LastChapterId, {headers : myHeaders})
     }
+
+    addChapter(c : Chapter) {
+        this._client.post(this.url+"/chapter", c).subscribe({
+            next : () => console.log(),
+            error : (error) => console.log(error)
+        })
+    }
 }

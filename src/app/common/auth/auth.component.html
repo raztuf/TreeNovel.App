@@ -4,8 +4,8 @@
     </span>
     
     <span *ngIf="currentUser != null">
-        <a [routerLink]="['/login']">{{currentUser.username}}</a> | 
-        <a [routerLink]="['/admin']" *ngIf="currentUser.isAdmin">Admin</a>
+        <a [routerLink]="['/login']">{{currentUser.username}}</a>  | 
+        <a [routerLink]="['/admin']" *ngIf="currentUser.isAdmin"> Admin Panel</a>  | 
         <button nbButton (click)="logout()">Logout</button>
     </span>
     

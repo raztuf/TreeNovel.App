@@ -5,14 +5,15 @@ import { LoginComponent } from '../app/common/login/login.component';
 import { RegisterComponent } from '../app/common/register/register.component';
 import { AdminComponent } from '../app/admin/admin.component';
 import { ChapterComponent } from '../app/chapter/chapter.component';
+import { NextChapterComponent } from './next-chapter/next-chapter.component';
 
 const routes: Routes = [
   { path : 'home', component : HomeComponent },
-  { path : '', redirectTo : 'home', pathMatch : 'full' },
   { path : 'login', component : LoginComponent},
   { path : 'register', component : RegisterComponent},
   { path : 'admin', component : AdminComponent },
-  { path : 'chapter/:id', component : ChapterComponent }
+  { path : 'chapter/:id', component : ChapterComponent },
+  { path : 'reply/:id', component : NextChapterComponent }
 ];
 
 @NgModule({

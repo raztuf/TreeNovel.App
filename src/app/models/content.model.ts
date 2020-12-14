@@ -1,11 +1,13 @@
+import { User } from "./users.model";
+
 export class Chapter {
     id : number;
     title : string;
     content : string;
-    userId : number;
     date : Date;
     lastChapterI? : number;
     encyclopedia : string;
+    writer : User;
 }
 
 export class Comment {

@@ -14,6 +14,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthService } from './services/auth.service';
+import { ChapterComponent } from './chapter/chapter.component';
+import { NextChapterComponent } from './next-chapter/next-chapter.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AuthService } from './services/auth.service';
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    ChapterComponent,
+    NextChapterComponent
   ],
   imports: [
     BrowserModule,

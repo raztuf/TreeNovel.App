@@ -27,11 +27,11 @@ export class ChapterService {
         return this._client.get<Chapter>(this.url + "/chapter/" + id, {headers : myHeaders})
     }
 
-    getByUserId(userId : number) : Observable<Chapter[]> {
+    getReplies(LastChapterId : number) : Observable<Chapter[]> {
         let myHeaders = new HttpHeaders({
             'Content-Type': 'application/json',
             'Authorization': 'Bearer' + sessionStorage.getItem('token')
         })
-        return this._client.get<Chapter[]>(this.url + "/chapter/user/" + userId, {headers : myHeaders})
+        return this._client.get<Chapter[]>(this.url + "/chapter/reply/" + LastChapterId, {headers : myHeaders})
     }
 }

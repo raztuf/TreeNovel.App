@@ -1,0 +1,14 @@
+<nb-card>
+    <nb-card-header>
+        <h3>{{currentChapter.title}}</h3>
+        <span>by {{currentChapter.writer.username}}</span>
+    </nb-card-header>
+
+    <nb-card-body>
+        <p>{{currentChapter.content}}</p>
+    </nb-card-body>
+
+    <nb-card-footer>
+        <p><a [routerLink]="['/reply', currentChapter.id]" routerLinkActive="on">Next</a></p>
+    </nb-card-footer>
+</nb-card>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chapter } from '../models/content.model';
-import { ChapterService } from '../services/chapter.service'; 
+import { ChapterService } from '../services/chapter.service';
 
 @Component({
     selector: 'app-home',

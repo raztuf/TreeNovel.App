@@ -1,0 +1,39 @@
+<nb-card>
+    <nb-card-header>
+        <h3>{{pChapter.title}} - Comments</h3>
+    </nb-card-header>
+
+    <nb-card-body>
+        <nb-card>
+            <nb-list>
+                <nb-list-item *ngFor="let item of listComment">
+                    <nb-card-header>
+                        {{item.writer.username}} :
+                    </nb-card-header>
+                    <nb-card-body>
+                        {{item.content}}
+                    </nb-card-body>
+                </nb-list-item>
+            </nb-list>
+        </nb-card>
+    </nb-card-body>
+</nb-card>
+
+<nb-card *ngIf="currentUser != null">
+    <nb-card-header>
+        New comment
+    </nb-card-header>
+
+    <nb-card-body>
+        <form (ngSubmit)="submit()">
+            <textarea fullWidth name="content" nbInput type="text" [(ngModel)]="content" placeholder="Comment"></textarea>
+            <button nbButton>Submit</button>
+        </form>
+    </nb-card-body>
+</nb-card>
+
+<nb-card *ngIf="currentUser == null">
+    <nb-card-header>
+        Login or register to comment
+    </nb-card-header>
+</nb-card>

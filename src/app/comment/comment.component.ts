@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NbDialogRef } from '@nebular/theme';
 import { CommentService } from '../services/comment.service';
-import { Comment } from '../models/content.model';
-import { UserService } from '../services/user.service';
+import { Comment, Chapter, CommentToApi } from '../models/content.model';
 import { AuthService } from '../services/auth.service';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { ChapterService } from '../services/chapter.service';
+import { User } from '../models/users.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-comment',
@@ -14,26 +15,31 @@ import { AuthService } from '../services/auth.service';
 
 export class CommentComponent implements OnInit {
 
+  listComment : Comment[] = [];
+  pChapter : Chapter;
+  currentUser : User;
   content : string;
-  @Input() chapterId : number;
 
   constructor(
-    private dialogRef : NbDialogRef<CommentComponent>,
+    private _route : ActivatedRoute,
     private _commentService : CommentService,
-    private _userService : AuthService
+    private _chapterService : ChapterService,
+    private _authService : AuthService
   ) { }
 
   ngOnInit(): void {
+    let Id = this._route.snapshot.params['id'];
+    this._commentService.getByChapterId(Id).subscribe((data : Comment[]) => this.listComment = data);
+    this._chapterService.getOne(Id).subscribe((data : Chapter) => this.pChapter = data);
+    this.currentUser = this._authService.currentUser;
   }
 
   submit(){
-    let comment = new Comment()
-    comment.content = this.content
-    comment.chapterId = this.chapterId
-    comment.date = new Date()
-    comment.userId = this._userService.currentUser.id
-    console.log(comment)
-    this._commentService.addComment(comment)
-    this.dialogRef.close()
+    let Id = this._route.snapshot.params['id'];
+    let c = new CommentToApi()
+    c.content = this.content;
+    c.userId = this.currentUser.id;
+    c.chapterId = parseInt(Id);
+    this._commentService.addComment(c);
   }
 }

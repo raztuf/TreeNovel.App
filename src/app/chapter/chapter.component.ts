@@ -15,8 +15,6 @@ export class ChapterComponent implements OnInit {
 
   currentUser : User;
   currentChapter : Chapter;
-  commentToggled : boolean;
-  userRole : string = sessionStorage.getItem("role");
   repliesList : Chapter[] = [];
   
   constructor(

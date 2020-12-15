@@ -31,11 +31,9 @@ export class NewChapterComponent implements OnInit {
     let chapter = new ChapterToApi()
     chapter.title = this.title;
     chapter.content = this.content;
-    chapter.date = new Date();
-    chapter.userId= this.currentUser.id;
+    chapter.userId = this.currentUser.id;
     chapter.encyclopedia = this.encyclopedia;
     this._chapterService.addChapter(chapter);
-    this._router.navigate(['/home']);
   }
 
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Comment } from '../models/content.model';
+import { Comment, CommentToApi } from '../models/content.model';
 
 @Injectable({
     providedIn: 'root'
@@ -19,7 +19,7 @@ export class CommentService {
         return this._client.get<Comment[]>(this.url + "/comment/chapter/" + ChapterId)
     }
 
-    addComment(c : Comment) {
+    addComment(c : CommentToApi) {
         this._client.post(this.url + "/comment", c).subscribe({
             next : () => console.log(),
             error : (error) => console.log(error)

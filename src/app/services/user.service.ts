@@ -29,7 +29,7 @@ export class UserService {
     }
 
     getUser(id : number){
-        return this._client.get<User>(this.url + "/user" + id);
+        return this._client.get<User>(this.url + "/user/" + id);
     }
 
 

@@ -20,11 +20,19 @@ export class ChapterToApi {
     encyclopedia : string;
 }
 
-export class Comment {
+export class CommentToApi {
     id : number;
     content : string;
     date : Date;
     userId : number;
+    chapterId : number;
+}
+
+export class Comment {
+    id : number;
+    content : string;
+    date : Date;
+    writer : User;
     chapterId : number;
 }
 

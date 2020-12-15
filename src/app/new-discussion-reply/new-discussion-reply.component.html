@@ -1,0 +1,12 @@
+<nb-card>
+    <nb-card-header>
+        Share your thoughts
+    </nb-card-header>
+
+    <nb-card-body>
+        <form (ngSubmit)="submit()">
+            <textarea fullWidth name="content" nbInput type="text" [(ngModel)]="content" placeholder="Content"></textarea>
+            <button nbButton>Submit</button>
+        </form>
+    </nb-card-body>
+</nb-card>

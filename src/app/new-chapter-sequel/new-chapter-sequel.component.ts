@@ -34,7 +34,6 @@ export class NewChapterSequelComponent implements OnInit {
     let chapter = new ChapterToApi()
     chapter.title = this.title;
     chapter.content = this.content;
-    chapter.date = new Date();
     chapter.userId = this.currentUser.id;
     chapter.encyclopedia = this.encyclopedia;
     chapter.lastChapterId = Id;

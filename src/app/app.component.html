@@ -2,8 +2,11 @@
 
   <nb-layout-header fixed>
   <h2><a [routerLink]="['/home']">TreeNovel</a></h2>
-  <span class="right"><a [routerLink]="['/submit']"><button nbButton>Submit</button></a> | <app-auth></app-auth></span>
-  <span class="center"></span>
+  <span class="right">
+    <a [routerLink]="['/discussion']">Forum</a> | 
+    <a [routerLink]="['/submit']"><button nbButton>Submit</button></a> | 
+    <app-auth></app-auth>
+  </span>
   </nb-layout-header>
 
   <nb-layout-column>

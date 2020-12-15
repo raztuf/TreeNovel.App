@@ -34,6 +34,7 @@ export class NewChapterComponent implements OnInit {
     chapter.userId = this.currentUser.id;
     chapter.encyclopedia = this.encyclopedia;
     this._chapterService.addChapter(chapter);
+    this._router.navigate(['/home']);
   }
 
 }

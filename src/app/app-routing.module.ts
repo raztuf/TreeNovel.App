@@ -10,6 +10,10 @@ import { NewChapterComponent } from './new-chapter/new-chapter.component';
 import { NewChapterSequelComponent } from './new-chapter-sequel/new-chapter-sequel.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { CommentComponent } from './comment/comment.component';
+import { DiscussionComponent } from './discussion/discussion.component';
+import { DiscussionRepliesComponent } from './discussion-replies/discussion-replies.component';
+import { NewDiscussionComponent } from './new-discussion/new-discussion.component';
+import { NewDiscussionReplyComponent } from './new-discussion-reply/new-discussion-reply.component';
 
 const routes: Routes = [
   { path : 'home', component : HomeComponent },
@@ -21,7 +25,11 @@ const routes: Routes = [
   { path : 'submit', component : NewChapterComponent },
   { path : 'submit/:id', component : NewChapterSequelComponent },
   { path : 'user/:id', component : UserPageComponent },
-  { path : 'comments/:id', component : CommentComponent }
+  { path : 'comments/:id', component : CommentComponent },
+  { path : 'discussion', component : DiscussionComponent },
+  { path : 'discussion/:id', component : DiscussionRepliesComponent },
+  { path : 'newdiscussion', component : NewDiscussionComponent },
+  { path : 'newdiscussion/:id', component : NewDiscussionReplyComponent }
 ];
 
 @NgModule({

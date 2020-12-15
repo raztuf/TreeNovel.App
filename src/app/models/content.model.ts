@@ -36,11 +36,20 @@ export class Comment {
     chapterId : number;
 }
 
+export class DiscussionToApi {
+    id : number;
+    title : string;
+    content : string;
+    userId : number;
+    date : Date;
+    replyToId : number;
+}
+
 export class Discussion {
     id : number;
     title : string;
     content : string;
-    userId : string;
+    writer : User;
     date : Date;
-    replyToId? : number;
+    replyToId : number;
 }

@@ -1,0 +1,23 @@
+<nb-card>
+    <nb-card-header fixed>
+        <h3>Forum</h3>
+        <span class="right">
+            <a [routerLink]="['/newdiscussion']">
+                <button nbButton>Create Discussion Thread</button>
+            </a>
+        </span>
+    </nb-card-header>
+    
+    <nb-card-body>
+        <nb-list>
+            <nb-list-item *ngFor="let item of listDiscussion">
+                <nb-card>
+                    <nb-card-header>
+                    <p>{{item.writer.username}} :</p>
+                    <p><a [routerLink]="['/discussion', item.id]">{{item.title}}</a></p>
+                    </nb-card-header>
+                </nb-card>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+</nb-card>

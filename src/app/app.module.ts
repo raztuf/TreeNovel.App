@@ -21,6 +21,10 @@ import { NewChapterComponent } from './new-chapter/new-chapter.component';
 import { NewChapterSequelComponent } from './new-chapter-sequel/new-chapter-sequel.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { CommentComponent } from './comment/comment.component';
+import { DiscussionComponent } from './discussion/discussion.component';
+import { DiscussionRepliesComponent } from './discussion-replies/discussion-replies.component';
+import { NewDiscussionComponent } from './new-discussion/new-discussion.component';
+import { NewDiscussionReplyComponent } from './new-discussion-reply/new-discussion-reply.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { CommentComponent } from './comment/comment.component';
     NewChapterComponent,
     NewChapterSequelComponent,
     UserPageComponent,
-    CommentComponent
+    CommentComponent,
+    DiscussionComponent,
+    DiscussionRepliesComponent,
+    NewDiscussionComponent,
+    NewDiscussionReplyComponent
   ],
   imports: [
     BrowserModule,

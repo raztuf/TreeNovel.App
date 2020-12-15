@@ -3,6 +3,7 @@ import { Chapter, ChapterToApi } from '../models/content.model';
 import { User } from '../models/users.model';
 import { AuthService } from '../services/auth.service';
 import { ChapterService } from '../services/chapter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-chapter',
@@ -18,7 +19,8 @@ export class NewChapterComponent implements OnInit {
 
   constructor(
     private _chapterService : ChapterService,
-    private _authService : AuthService
+    private _authService : AuthService,
+    private _router : Router
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +35,7 @@ export class NewChapterComponent implements OnInit {
     chapter.userId= this.currentUser.id;
     chapter.encyclopedia = this.encyclopedia;
     this._chapterService.addChapter(chapter);
+    this._router.navigate(['/home']);
   }
 
 }

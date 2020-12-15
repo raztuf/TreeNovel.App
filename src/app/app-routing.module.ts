@@ -8,6 +8,7 @@ import { ChapterComponent } from '../app/chapter/chapter.component';
 import { NextChapterComponent } from './next-chapter/next-chapter.component';
 import { NewChapterComponent } from './new-chapter/new-chapter.component';
 import { NewChapterSequelComponent } from './new-chapter-sequel/new-chapter-sequel.component';
+import { UserPageComponent } from './user-page/user-page.component';
 
 const routes: Routes = [
   { path : 'home', component : HomeComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path : 'chapter/:id', component : ChapterComponent },
   { path : 'reply/:id', component : NextChapterComponent },
   { path : 'submit', component : NewChapterComponent },
-  { path : 'submit/:id', component : NewChapterSequelComponent }
+  { path : 'submit/:id', component : NewChapterSequelComponent },
+  { path : 'user/:id', component : UserPageComponent }
 ];
 
 @NgModule({

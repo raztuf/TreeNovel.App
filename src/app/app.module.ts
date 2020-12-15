@@ -19,6 +19,7 @@ import { NextChapterComponent } from './next-chapter/next-chapter.component';
 import { UserService } from './services/user.service';
 import { NewChapterComponent } from './new-chapter/new-chapter.component';
 import { NewChapterSequelComponent } from './new-chapter-sequel/new-chapter-sequel.component';
+import { UserPageComponent } from './user-page/user-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NewChapterSequelComponent } from './new-chapter-sequel/new-chapter-sequ
     ChapterComponent,
     NextChapterComponent,
     NewChapterComponent,
-    NewChapterSequelComponent
+    NewChapterSequelComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,

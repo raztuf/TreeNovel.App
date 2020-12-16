@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NewUser } from '../../models/users.model';
 import { UserService } from '../../services/user.service';
 
@@ -14,7 +15,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private _service : UserService,
-    private _builder : FormBuilder
+    private _builder : FormBuilder,
+    private _router : Router
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +34,7 @@ export class RegisterComponent implements OnInit {
     newUser.password = values['password']
     newUser.username = values['username']
     this._service.register(newUser)
+    this._router.navigate(['/home']);
   }
 
 }

@@ -53,3 +53,9 @@ export class Discussion {
     date : Date;
     replyToId : number;
 }
+
+export class Story {
+    id : number;
+    title : string;
+    lastEntry : number;
+}

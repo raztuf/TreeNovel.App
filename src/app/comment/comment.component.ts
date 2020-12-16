@@ -24,7 +24,8 @@ export class CommentComponent implements OnInit {
     private _route : ActivatedRoute,
     private _commentService : CommentService,
     private _chapterService : ChapterService,
-    private _authService : AuthService
+    private _authService : AuthService,
+    private _router : Router
   ) { }
 
   ngOnInit(): void {
@@ -41,5 +42,6 @@ export class CommentComponent implements OnInit {
     c.userId = this.currentUser.id;
     c.chapterId = parseInt(Id);
     this._commentService.addComment(c);
+    this._router.navigate(['/chapter/' + Id]);
   }
 }

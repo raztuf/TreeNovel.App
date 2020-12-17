@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Story } from '../models/content.model';
+import { Story, FStory } from '../models/content.model';
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class ChapterService {
+export class StoryService {
 
     private url : string = "http://localhost:4000/api";
 
@@ -15,12 +15,12 @@ export class ChapterService {
         private _client : HttpClient
     ){}
 
-    getAll() : Observable<Story[]> {
-        return this._client.get<Story[]>(this.url + "/story");
+    getAll() : Observable<FStory[]> {
+        return this._client.get<FStory[]>(this.url + "/fstory");
     }
 
-    getOne(id : number) : Observable<Story> {
-        return this._client.get<Story>(this.url + "/story/" + id)
+    getOne(id : number) : Observable<FStory> {
+        return this._client.get<FStory>(this.url + "/fstory/" + id)
     }
 
     addStory(s : Story) {

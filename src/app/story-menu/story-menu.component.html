@@ -1,0 +1,12 @@
+<nb-card>
+    <nb-card-header>
+        <h3>Read the whole story</h3>
+    </nb-card-header>
+    <nb-card-body>
+        <nb-list>
+            <nb-list-item *ngFor="let item of listStory">
+                <p><a [routerLink]="['/story', item.id]">{{item.storyTitle}}</a></p>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+</nb-card>

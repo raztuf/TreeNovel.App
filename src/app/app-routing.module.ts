@@ -14,6 +14,9 @@ import { DiscussionComponent } from './discussion/discussion.component';
 import { DiscussionRepliesComponent } from './discussion-replies/discussion-replies.component';
 import { NewDiscussionComponent } from './new-discussion/new-discussion.component';
 import { NewDiscussionReplyComponent } from './new-discussion-reply/new-discussion-reply.component';
+import { StoryMenuComponent } from './story-menu/story-menu.component';
+import { StoryComponent } from './story/story.component';
+import { StoryResolver } from './services/story-resolver';
 
 const routes: Routes = [
   { path : 'home', component : HomeComponent },
@@ -29,7 +32,10 @@ const routes: Routes = [
   { path : 'discussion', component : DiscussionComponent },
   { path : 'discussion/:id', component : DiscussionRepliesComponent },
   { path : 'newdiscussion', component : NewDiscussionComponent },
-  { path : 'newdiscussion/:id', component : NewDiscussionReplyComponent }
+  { path : 'newdiscussion/:id', component : NewDiscussionReplyComponent },
+  { path : 'story', component : StoryMenuComponent },
+  { path : 'story/:id', component : StoryComponent, 
+    resolve : { currentStory : StoryResolver }}
 ];
 
 @NgModule({

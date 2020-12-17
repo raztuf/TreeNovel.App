@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FStory } from '../models/content.model';
+import { StoryService } from '../services/story.service';
 
 @Component({
   selector: 'app-story-menu',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoryMenuComponent implements OnInit {
 
-  constructor() { }
+  listStory : FStory[];
+
+  constructor(
+    private _storyService : StoryService
+  ) { }
 
   ngOnInit(): void {
+    this._storyService.getAll().subscribe((data : FStory[]) => this.listStory = data)
   }
 
 }

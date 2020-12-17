@@ -54,6 +54,16 @@ export class Discussion {
     replyToId : number;
 }
 
+export class FStory {
+    id : number;
+    lastId : number;
+    storyTitle : string;
+    chapterTitle : string;
+    chapterContent : string;
+    chapterEncyclopedia : string;
+    lastChapterId : number;
+}
+
 export class Story {
     id : number;
     title : string;

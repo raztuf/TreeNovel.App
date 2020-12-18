@@ -22,7 +22,7 @@ export class ReportService {
     return this._client.get<Report>(this.url + "/report/" + id)
   }
 
-  addArticle(r : Report) {
+  addReport(r : Report) {
     this._client.post(this.url+"/report", r).subscribe({
       next : () => console.log(),
       error : (error) => console.log(error)

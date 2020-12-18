@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NbThemeModule, NbSidebarModule, NbLayoutModule, NbTabsetModule, NbButtonModule, NbCardModule, NbIconModule, NbInputModule, NbListModule, NbDialogModule } from '@nebular/theme';
+import { NbThemeModule, NbSidebarModule, NbLayoutModule, NbTabsetModule, NbButtonModule, NbCardModule, NbIconModule, NbInputModule, NbListModule, NbDialogModule, NbSelectModule } from '@nebular/theme';
 import { AuthComponent } from './common/auth/auth.component';
 import { RegisterComponent } from './common/register/register.component';
 import { LoginComponent } from './common/login/login.component';
@@ -25,6 +25,11 @@ import { DiscussionComponent } from './discussion/discussion.component';
 import { DiscussionRepliesComponent } from './discussion-replies/discussion-replies.component';
 import { NewDiscussionComponent } from './new-discussion/new-discussion.component';
 import { NewDiscussionReplyComponent } from './new-discussion-reply/new-discussion-reply.component';
+import { ArticleComponent } from './article/article.component';
+import { ArticleFeedComponent } from './article-feed/article-feed.component';
+import { NewArticleComponent } from './new-article/new-article.component';
+import { NewReportComponent } from './new-report/new-report.component';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +48,12 @@ import { NewDiscussionReplyComponent } from './new-discussion-reply/new-discussi
     DiscussionComponent,
     DiscussionRepliesComponent,
     NewDiscussionComponent,
-    NewDiscussionReplyComponent
+    NewDiscussionReplyComponent,
+    ArticleComponent,
+    ArticleFeedComponent,
+    NewArticleComponent,
+    NewReportComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +73,8 @@ import { NewDiscussionReplyComponent } from './new-discussion-reply/new-discussi
     RouterModule,
     NbSidebarModule,
     BrowserAnimationsModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    NbSelectModule
   ],
   providers: [AuthService, UserService],
   bootstrap: [AppComponent]

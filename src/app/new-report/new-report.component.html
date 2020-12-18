@@ -1,0 +1,23 @@
+<nb-card *ngIf="currentUser != null">
+    <nb-card-header>
+        Report inappropriate content
+    </nb-card-header>
+    <nb-card-body>
+        <form (ngSubmit)="submit()">
+            <input nbInput fullWidth name="title" type="text" [(ngModel)]="title" placeholder="Title">
+            <textarea fullWidth name="content" nbInput type="text" [(ngModel)]="content" placeholder="Content"></textarea>
+            <nb-select placeholder="Subject" [(selected)]="subject">
+                <nb-option value="Hatespeech">Hatespeech</nb-option>
+                <nb-option value="Illegal">Illegal content</nb-option>
+                <nb-option value="Spam">Spam / low-effort</nb-option>
+              </nb-select>
+            <button nbButton>Submit</button>
+        </form>
+    </nb-card-body>
+</nb-card>
+
+<nb-card *ngIf="currentUser == null">
+    <nb-card-header>
+        Login or register to report content
+    </nb-card-header>
+</nb-card>

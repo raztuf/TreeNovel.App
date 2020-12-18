@@ -1,0 +1,21 @@
+<nb-card>
+    <nb-card-header>
+        <h3>Submitted reports</h3>
+    </nb-card-header>
+    <nb-card-body>
+        <nb-list>
+            <nb-list-item *ngFor="let item of listReport">
+                <nb-card>
+                    <nb-card-header>
+                        <div>Report by user {{item.userId}}</div>
+                        <div>Subject : {{item.subject}}</div>
+                    </nb-card-header>
+                    <nb-card-body>
+                        <div>{{item.title}}</div>
+                        <div>{{item.content}}</div>
+                    </nb-card-body>
+                </nb-card>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+</nb-card>

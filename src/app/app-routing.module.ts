@@ -14,6 +14,11 @@ import { DiscussionComponent } from './discussion/discussion.component';
 import { DiscussionRepliesComponent } from './discussion-replies/discussion-replies.component';
 import { NewDiscussionComponent } from './new-discussion/new-discussion.component';
 import { NewDiscussionReplyComponent } from './new-discussion-reply/new-discussion-reply.component';
+import { ArticleFeedComponent } from './article-feed/article-feed.component';
+import { ArticleComponent } from './article/article.component';
+import { NewArticleComponent } from './new-article/new-article.component';
+import { ReportComponent } from './report/report.component';
+import { NewReportComponent } from './new-report/new-report.component';
 
 const routes: Routes = [
   { path : 'home', component : HomeComponent },
@@ -29,7 +34,12 @@ const routes: Routes = [
   { path : 'discussion', component : DiscussionComponent },
   { path : 'discussion/:id', component : DiscussionRepliesComponent },
   { path : 'newdiscussion', component : NewDiscussionComponent },
-  { path : 'newdiscussion/:id', component : NewDiscussionReplyComponent }
+  { path : 'newdiscussion/:id', component : NewDiscussionReplyComponent },
+  { path : 'article', component : ArticleFeedComponent },
+  { path : 'article/:id', component : ArticleComponent },
+  { path : 'newarticle', component : NewArticleComponent },
+  { path : 'report', component : ReportComponent },
+  { path : 'newreport', component : NewReportComponent }
 ];
 
 @NgModule({

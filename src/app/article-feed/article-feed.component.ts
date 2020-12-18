@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from '../models/content.model';
+import { ArticleService } from '../services/article.service';
 
 @Component({
   selector: 'app-article-feed',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleFeedComponent implements OnInit {
 
-  constructor() { }
+  listArticle : Article[];
+
+  constructor(
+    private _articleService : ArticleService
+  ) { }
 
   ngOnInit(): void {
+    this._articleService.getAll().subscribe((data : Article[]) => this.listArticle = data);
+    this.listArticle.reverse();
   }
 
 }

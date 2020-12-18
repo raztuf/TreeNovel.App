@@ -1,1 +1,12 @@
-<p>article-feed works!</p>
+<nb-card>
+    <nb-card-header>
+        <h3>Articles</h3>
+    </nb-card-header>
+    <nb-card-body>
+        <nb-list>
+            <nb-list-item *ngFor="let item of listArticle">
+                <p><a [routerLink]="['/article', item.id]">{{item.title}}</a></p>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+</nb-card>

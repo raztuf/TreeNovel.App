@@ -1,1 +1,18 @@
-<p>new-article works!</p>
+<nb-card *ngIf="currentUser.isAdmin">
+    <nb-card-header>
+        New Chapter
+    </nb-card-header>
+    <nb-card-body>
+        <form (ngSubmit)="submit()">
+            <input nbInput fullWidth name="title" type="text" [(ngModel)]="title" placeholder="Title">
+            <textarea fullWidth name="content" nbInput type="text" [(ngModel)]="content" placeholder="Content"></textarea>
+            <button nbButton>Submit</button>
+        </form>
+    </nb-card-body>
+</nb-card>
+
+<nb-card *ngIf="!currentUser.isAdmin">
+    <nb-card-header>
+        You must be an administrator to access this content.
+    </nb-card-header>
+</nb-card>

@@ -54,18 +54,18 @@ export class Discussion {
     replyToId : number;
 }
 
-export class FStory {
-    id : number;
-    lastId : number;
-    storyTitle : string;
-    chapterTitle : string;
-    chapterContent : string;
-    chapterEncyclopedia : string;
-    lastChapterId : number;
-}
-
-export class Story {
+export class Article {
     id : number;
     title : string;
-    lastEntry : number;
+    date : Date;
+    content : string;
+}
+
+export class Report {
+    id : number;
+    title : string;
+    userId : number;
+    date : Date;
+    content : string;
+    subject : string;
 }

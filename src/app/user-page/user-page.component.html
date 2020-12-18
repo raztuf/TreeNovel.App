@@ -3,7 +3,7 @@
         <h3>{{pageUser.username}}</h3>
     </nb-card-header>
 
-    <nb-card-body *ngIf="currentUser.id == pageUser.id">
+    <nb-card-body *ngIf="currentUser.id == pageUser.id || currentUser.isAdmin">
         <span>Delete</span> | 
         <span>Edit</span>
     </nb-card-body>

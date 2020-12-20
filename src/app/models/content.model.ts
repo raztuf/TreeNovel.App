@@ -8,6 +8,7 @@ export class Chapter {
     writer : User;
     lastChapterId : number;
     encyclopedia : string;
+    categoryName : string;
 }
 
 export class ChapterToApi {
@@ -18,6 +19,7 @@ export class ChapterToApi {
     userId : number;
     lastChapterId : number;
     encyclopedia : string;
+    categoryName : string;
 }
 
 export class CommentToApi {
@@ -68,4 +70,10 @@ export class Report {
     date : Date;
     content : string;
     subject : string;
+}
+
+export class Category {
+    id : number;
+    name : string;
+    sidebar : string;
 }

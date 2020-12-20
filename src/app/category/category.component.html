@@ -1,0 +1,12 @@
+<nb-card>
+    <nb-card-header>
+        <h3>{{currentCategory.name}}</h3>
+    </nb-card-header>
+    <nb-card-body>
+        <nb-list>
+            <nb-list-item *ngFor="let item of listChapter">
+                <p><a [routerLink]="['/chapter', item.id]">{{item.title}}</a></p>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+</nb-card>

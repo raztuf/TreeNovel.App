@@ -8,7 +8,9 @@
     <nb-card-body>
         <nb-list>
             <nb-list-item *ngFor="let item of listUser">
-                <p><a [routerLink]="['/user', item.id]">{{item.username}}</a></p>
+                <p>{{item.username }} </p>
+                <p>  -  id : {{item.id}}</p>
+                <p class="right"><button nbButton (click)="deleteUser(item)">Delete</button></p>
             </nb-list-item>
         </nb-list>
     </nb-card-body>

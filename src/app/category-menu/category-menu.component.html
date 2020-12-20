@@ -1,0 +1,12 @@
+<nb-card>
+    <nb-card-header>
+        <h3>Choose a genre</h3>
+    </nb-card-header>
+    <nb-card-body>
+        <nb-list>
+            <nb-list-item *ngFor="let item of listCategory">
+                <p><a [routerLink]="['/category', item.id]">{{item.name}}</a></p>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+</nb-card>

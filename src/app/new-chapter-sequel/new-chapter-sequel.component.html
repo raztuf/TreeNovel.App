@@ -5,6 +5,7 @@
     <nb-card-body>
         <form (ngSubmit)="submit()">
             <input nbInput fullWidth name="title" type="text" [(ngModel)]="title" placeholder="Title">
+            <input nbInput fullWidth name="category" type="text" [(ngModel)]="category" placeholder="Category">
             <textarea fullWidth name="content" nbInput type="text" [(ngModel)]="content" placeholder="Content"></textarea>
             <textarea fullWidth name="encyclopedia" nbInput type="text" [(ngModel)]="encyclopedia" placeholder="Encyclopedia"></textarea>
             <button nbButton>Submit</button>

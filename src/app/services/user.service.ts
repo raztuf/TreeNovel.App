@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NewUser, User } from '../models/users.model';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -32,5 +32,10 @@ export class UserService {
         return this._client.get<User>(this.url + "/user/" + id);
     }
 
-
+    deleteUser(u : User){
+        this._client.put(this.url + "/user/" + u.id, u).subscribe({
+            next : () => this._router.navigate(['/home']),
+            error : (error) => console.log(error)
+        });
+    }
 }

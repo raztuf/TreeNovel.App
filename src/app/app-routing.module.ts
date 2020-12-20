@@ -8,7 +8,6 @@ import { ChapterComponent } from '../app/chapter/chapter.component';
 import { NextChapterComponent } from './next-chapter/next-chapter.component';
 import { NewChapterComponent } from './new-chapter/new-chapter.component';
 import { NewChapterSequelComponent } from './new-chapter-sequel/new-chapter-sequel.component';
-import { UserPageComponent } from './user-page/user-page.component';
 import { CommentComponent } from './comment/comment.component';
 import { DiscussionComponent } from './discussion/discussion.component';
 import { DiscussionRepliesComponent } from './discussion-replies/discussion-replies.component';
@@ -19,6 +18,8 @@ import { ArticleComponent } from './article/article.component';
 import { NewArticleComponent } from './new-article/new-article.component';
 import { ReportComponent } from './report/report.component';
 import { NewReportComponent } from './new-report/new-report.component';
+import { CategoryComponent } from './category/category.component';
+import { CategoryMenuComponent } from './category-menu/category-menu.component';
 
 const routes: Routes = [
   { path : 'home', component : HomeComponent },
@@ -29,7 +30,6 @@ const routes: Routes = [
   { path : 'reply/:id', component : NextChapterComponent },
   { path : 'submit', component : NewChapterComponent },
   { path : 'submit/:id', component : NewChapterSequelComponent },
-  { path : 'user/:id', component : UserPageComponent },
   { path : 'comments/:id', component : CommentComponent },
   { path : 'discussion', component : DiscussionComponent },
   { path : 'discussion/:id', component : DiscussionRepliesComponent },
@@ -39,7 +39,9 @@ const routes: Routes = [
   { path : 'article/:id', component : ArticleComponent },
   { path : 'newarticle', component : NewArticleComponent },
   { path : 'report', component : ReportComponent },
-  { path : 'newreport', component : NewReportComponent }
+  { path : 'newreport', component : NewReportComponent },
+  { path : 'category/:id', component : CategoryComponent },
+  { path : 'category', component : CategoryMenuComponent }
 ];
 
 @NgModule({

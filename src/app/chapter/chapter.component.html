@@ -9,6 +9,12 @@
     </nb-card-body>
 
     <nb-card-footer>
+        <span>
+            <button nbButton [nbPopover]="templateRef" nbPopoverPlacement="bottom">Encyclopedia</button>
+            <ng-template #templateRef>
+                <span>{{currentChapter.encyclopedia}}</span>
+            </ng-template>
+        </span> | 
         <span><a [routerLink]="['/reply', currentChapter.id]">Next</a></span> | 
         <span><a [routerLink]="['/comments', currentChapter.id]">Comments</a></span> | 
         <span><a [routerLink]="['/submit', currentChapter.id]">Write your own sequel</a></span>

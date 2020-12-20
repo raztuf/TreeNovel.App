@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NbThemeModule, NbSidebarModule, NbLayoutModule, NbTabsetModule, NbButtonModule, NbCardModule, NbIconModule, NbInputModule, NbListModule, NbDialogModule, NbSelectModule } from '@nebular/theme';
+import { NbThemeModule, NbSidebarModule, NbLayoutModule, NbTabsetModule, NbButtonModule, NbCardModule, NbIconModule, NbInputModule, NbListModule, NbDialogModule, NbSelectModule, NbPopoverModule } from '@nebular/theme';
 import { AuthComponent } from './common/auth/auth.component';
 import { RegisterComponent } from './common/register/register.component';
 import { LoginComponent } from './common/login/login.component';
@@ -19,7 +19,6 @@ import { NextChapterComponent } from './next-chapter/next-chapter.component';
 import { UserService } from './services/user.service';
 import { NewChapterComponent } from './new-chapter/new-chapter.component';
 import { NewChapterSequelComponent } from './new-chapter-sequel/new-chapter-sequel.component';
-import { UserPageComponent } from './user-page/user-page.component';
 import { CommentComponent } from './comment/comment.component';
 import { DiscussionComponent } from './discussion/discussion.component';
 import { DiscussionRepliesComponent } from './discussion-replies/discussion-replies.component';
@@ -30,6 +29,8 @@ import { ArticleFeedComponent } from './article-feed/article-feed.component';
 import { NewArticleComponent } from './new-article/new-article.component';
 import { NewReportComponent } from './new-report/new-report.component';
 import { ReportComponent } from './report/report.component';
+import { CategoryComponent } from './category/category.component';
+import { CategoryMenuComponent } from './category-menu/category-menu.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,6 @@ import { ReportComponent } from './report/report.component';
     NextChapterComponent,
     NewChapterComponent,
     NewChapterSequelComponent,
-    UserPageComponent,
     CommentComponent,
     DiscussionComponent,
     DiscussionRepliesComponent,
@@ -53,7 +53,9 @@ import { ReportComponent } from './report/report.component';
     ArticleFeedComponent,
     NewArticleComponent,
     NewReportComponent,
-    ReportComponent
+    ReportComponent,
+    CategoryComponent,
+    CategoryMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ import { ReportComponent } from './report/report.component';
     NbSidebarModule,
     BrowserAnimationsModule,
     NbEvaIconsModule,
-    NbSelectModule
+    NbSelectModule,
+    NbPopoverModule
   ],
   providers: [AuthService, UserService],
   bootstrap: [AppComponent]

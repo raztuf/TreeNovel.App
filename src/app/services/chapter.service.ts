@@ -33,4 +33,8 @@ export class ChapterService {
             error : (error) => console.log(error)
         })
     }
+
+    getByGenre(Name : string) : Observable<Chapter[]> {
+        return this._client.get<Chapter[]>(this.url + "/chapter/genre/" + Name)
+    }
 }

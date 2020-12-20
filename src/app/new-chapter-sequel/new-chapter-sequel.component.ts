@@ -17,6 +17,7 @@ export class NewChapterSequelComponent implements OnInit {
   content : string;
   encyclopedia : string;
   currentUser : User;
+  category : string;
 
   constructor(
     private _chapterService : ChapterService,
@@ -37,6 +38,7 @@ export class NewChapterSequelComponent implements OnInit {
     chapter.userId = this.currentUser.id;
     chapter.encyclopedia = this.encyclopedia;
     chapter.lastChapterId = parseInt(Id);
+    chapter.categoryName = this.category;
     this._chapterService.addChapter(chapter);
     this._router.navigate(['/home']);
   }
